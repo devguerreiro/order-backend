@@ -6,18 +6,33 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0002_add__client'),
+        ("core", "0002_add__client"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150)),
-                ('currency', models.CharField(choices=[('R$', 'Real'), ('$', 'Dolar'), ('€', 'Euro')], default='R$', max_length=5)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=9)),
-                ('multiplier', models.IntegerField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150)),
+                (
+                    "currency",
+                    models.CharField(
+                        choices=[("R$", "Real"), ("$", "Dolar"), ("€", "Euro")],
+                        default="R$",
+                        max_length=5,
+                    ),
+                ),
+                ("price", models.DecimalField(decimal_places=2, max_digits=9)),
+                ("multiplier", models.IntegerField(default=1)),
             ],
         ),
     ]
