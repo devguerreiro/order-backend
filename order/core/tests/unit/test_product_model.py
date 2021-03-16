@@ -12,7 +12,7 @@ class ProductModelTestCase(TestCase):
 
     def test_str_model_object(self):
         product = Product(
-            name="Notebook", currency=Product.CurrencyChoices.REAL, price=2_599_00
+            name="Notebook", currency=Product.CurrencyChoices.REAL, price=2_599.00
         )
         expected = f"{product.name} - {product.currency} {product.price}"
         self.assertEqual(expected, str(product))

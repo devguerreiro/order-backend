@@ -26,7 +26,7 @@ class OrderItemsModelTestCase(TestCase):
 
     def test_str_model_object(self):
         item = Product(
-            name="Notebook", currency=Product.CurrencyChoices.REAL, price=2_599_00
+            name="Notebook", currency=Product.CurrencyChoices.REAL, price=2_599.00
         )
         order_item = OrderItem(item=item, quantity=10)
         expected = f"{order_item.quantity} x {order_item.item}"
