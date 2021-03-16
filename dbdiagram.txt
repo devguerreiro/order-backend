@@ -1,0 +1,28 @@
+Table Client {
+  id int [pk, increment]
+  name varchar
+}
+
+Table Product {
+  id int pk [pk, increment]
+  name varchar
+  currency varchar
+  price double
+  multiplier int
+}
+
+Table Order {
+  id int pk [pk, increment]
+  client int [ref: - Client.id]
+  items int [ref: > Product.id]
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table OrderItem {
+  id int [pk, increment]
+  item int [ref: - Product.id]
+  order int [ref: - Order.id]
+  quantity int
+  unit_price double
+}
