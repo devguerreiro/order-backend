@@ -10,7 +10,7 @@ class OrderModelTestCase(TestCase):
         self.assertIs(hasattr(Order, "created_at"), True)
         self.assertIs(hasattr(Order, "updated_at"), True)
 
-    def test_str_should_return_id_with_client(self):
+    def test_str_model_object(self):
         client = Client(name="Luis")
         order = Order(client=client)
         expected = f"{order.id} - {order.client}"
@@ -24,7 +24,7 @@ class OrderItemsModelTestCase(TestCase):
         self.assertIs(hasattr(OrderItem, "quantity"), True)
         self.assertIs(hasattr(OrderItem, "unit_price"), True)
 
-    def test_str_should_return_quantity_with_product(self):
+    def test_str_model_object(self):
         item = Product(
             name="Notebook", currency=Product.CurrencyChoices.REAL, price=2_599_00
         )
